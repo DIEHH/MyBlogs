@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2FMyBlogs%2F2015%2F04%2F21%2FHello-World%2F</url>
-    <content type="text"><![CDATA[Hello World我的hexo第一天]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HTML 初解]]></title>
     <url>%2FMyBlogs%2F2015%2F04%2F21%2FHTML5%E5%88%9D%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[HTMLHTML是什么 HTML 指的是超文本标记语言 (Hyper Text Markup Language) HTML 不是一种编程语言，而是一种标记语言 (markup language) 标记语言是一套标记标签 (markup tag) HTML 使用标记标签来描述网页 通俗易懂的话就是：HTML不是编程语言，使用标记来描述（展示）网页的标记语言。（PS：网页专用啦） HTML基础HTML标签 标签也称之为标记，通常称为HTML标签 HTML 标签是由尖括号包围的关键词，比如 &lt;html&gt; HTML 标签通常是成对出现的，比如 &lt;b&gt; 和 &lt;/b&gt;；还有一些单标签，比如 &lt;input /&gt; 和 &lt;img /&gt; 标签对中的第一个标签是开始标签，第二个标签是结束标签 开始和结束标签也被称为开放标签和闭合标签 PS：HTML中标题很重要，是SEO做优化的地方，所以很重要，当然不仅仅因为SEO做优化就很重要啦，嗯，就是很重要。（0.-） 标题标签&lt;h1~h6&gt; &lt;/h1~h6&gt; &lt;h1&gt;我是标题一&lt;/h1&gt; &lt;h2&gt;我是标题二&lt;/h2&gt; &lt;h3&gt;我是标题三&lt;/h3&gt; &lt;h4&gt;我是标题四&lt;/h4&gt; &lt;h5&gt;我是标题五&lt;/h5&gt; &lt;h6&gt;我是标题六&lt;/h6&gt; explain:标题标签一般用于包裹标题文本，并设置有默认属性（加粗，不同的字号，独占一行）。 PS：HTML提供的标题标签总共有6个，从1开始到6结束，并且字号是从大到小 段落标签&lt;p&gt; &lt;/p&gt; &lt;p&gt;我是第一个段落&lt;/p&gt; &lt;p&gt;我是第二个段落&lt;/p&gt; explain：段落标签一般用于包裹内容文本，默认字体大小为浏览器字体大小，同样独占一行。 链接&lt;a href=””&gt; &lt;/a&gt; &lt;a href=&quot;www.baidu.com&quot;&gt;点我进入百度&lt;/a&gt; explain：链接标签用于包裹想定义跳转的文字和图片，默认属性href，值是你想跳转的url地址。 图像&lt;img src=”” alt=”” /&gt; &lt;img src=&quot;https://avatars0.githubusercontent.com/u/26076529?v=3&amp;u=02e97315a3c8b1fe9022529b1d0863f1129b1bed&amp;s=400&quot; alt=&quot;就是想让你看我头像&quot; /&gt; explain: 图像标签用于在网页中展示图片的标签，默认属性src用于加载图片地址，alt用于图像的描述。 PS：alt属性是SEO（搜索引擎优化）优化的地方 加粗&lt;b&gt; &lt;/b&gt;,&lt;strong&gt; &lt;/strong&gt; &lt;b&gt;我是加粗的文字&lt;/b&gt; &lt;strong&gt;同上&lt;/shtong&gt; explain: 这两个标签直接将文本包裹，会在页面上出现加粗的字体效果。 PS：当标签不够用时，可消除它的默认属性，用作于容器来使用。 倾斜&lt;i&gt; &lt;/i&gt;,&lt;em&gt; &lt;/em&gt; &lt;i&gt;我倾斜啦&lt;/i&gt; &lt;em&gt;好巧哦我也是&lt;/em&gt; explain: 这两个标签将文本包裹，会在页面上出现倾斜的文字效果。 PS：当标签不够用时，可消除它的默认属性，用作于容器来使用。 换行&lt;br /&gt; explain: 这是一个单标签，用于换行。 div&lt;div&gt; &lt;/div&gt; explain: 这个标签为一个容器，没有任何默认属性，配合css使用，来为自己的页面布局。 PS：这也被称为盒子模型 表单&lt;form&gt; &lt;/form&gt;,&lt;input /&gt;,&lt;select&gt; &lt;option&gt; &lt;/option&gt; &lt;/select&gt; &lt;form&gt; 我是一个可输入的文本框&lt;input type=&quot;text&quot; /&gt; 我是一个按钮&lt;input type=&quot;button&quot; /&gt; 我是一个提交按钮&lt;input type=&quot;submit&quot; /&gt; &lt;/form&gt; explain: form标签是一个简单的，可以与用户交互的，将用户输入的数据传输给后台的一个标签，是表单最外层标签。input标签是表单中的插件，默认的type属性为text，用户可在其中输入文本信息，select是下拉菜单最外层标签，默认属性name为设置下拉菜单的名称，option为下拉菜单中的分类，用于包裹分类内容。 PS：input常用的type属性值： text; (用于输入文本) password; (用于输入密码) button; (按钮) submit; (提交按钮) checkbox; (复选框) radio; (单选框) PS：在定义单选框的时候需将他们name属性设置为一样的值 reset; (重置按钮) 标签小结 标签分为单标签和双标签 双标签必须有结束标签，如：&lt;/&gt; 为了规范书写和不必要的BUG，在单标签后面也要加上 / ，如：&lt;input /&gt; 元素explain: HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。 元素语法 HTML 元素以开始标签起始 HTML 元素以结束标签终止 元素的内容是开始标签与结束标签之间的内容 某些 HTML 元素具有空内容（empty content） 空元素在开始标签中进行关闭（以开始标签的结束而结束） 大多数 HTML 元素可拥有属性 嵌套的 HTML 元素大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。HTML 文档由嵌套的 HTML 元素构成。 &lt;html&gt; &lt;body&gt; &lt;p&gt;This is my first paragraph.&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 上面的例子 html 标签中包含三个 HTML 元素(html , body , p)。 HTML 实例解释p 元素：&lt;p&gt;This is my first paragraph.&lt;/p&gt; 这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。 这个元素拥有一个开始标签 &lt;p&gt;，以及一个结束标签 &lt;/p&gt;。 元素内容是：This is my first paragraph。 body 元素：&lt;body&gt; &lt;p&gt;This is my first paragraph.&lt;/p&gt; &lt;/body&gt; &lt;body&gt; 元素定义了 HTML 文档的主体。 这个元素拥有一个开始标签 &lt;body&gt;，以及一个结束标签 &lt;/body&gt;。 元素内容是另一个 HTML 元素（p 元素）。 html 元素：&lt;html&gt; &lt;body&gt; &lt;p&gt;This is my first paragraph.&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;html&gt; 元素定义了整个 HTML 文档。 这个元素拥有一个开始标签 &lt;html&gt;，以及一个结束标签 &lt;/html&gt;。 元素内容是另一个 HTML 元素（body 元素）。 小结 简而言之，元素就是放在开始标签和结束标签的代码 学习小结 html是超文本标记语言 标签都有默认属性 标签有双标签和单标签 都有结束符号：/ 开始标签和结束标签之间的代码为元素 自我总结第一次写自己的博客，正式成为一只前端的小程序猿啦，感觉自己有点小兴奋啊。知识点有自己的，也有w3school的。我只是搬过来用用啦，别介！（-.0）。附w3school地址：http://www.w3school.com.cn]]></content>
@@ -20,6 +9,17 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2FMyBlogs%2F2015%2F04%2F21%2FHello-World%2F</url>
+    <content type="text"><![CDATA[Hello World我的hexo第一天]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
