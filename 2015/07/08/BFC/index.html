@@ -77,7 +77,7 @@
 <link href="/MyBlogs/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="HTML,CSS,BFC," />
 
 
 
@@ -93,17 +93,24 @@
 
 
 
-<meta name="description" content="Hello World我的hexo第一天">
-<meta name="keywords" content="test">
+<meta name="description" content="什么是BFC（Block formatting contexts）首先我们来看看w3c规范对BFC的解释，其实对于这种概念的学习上，我们总是建议首先寻找官方的定义，因为原则上来说官方的才是最权威和正确的，而且还比较详细，千万不要因为看到英文就畏惧不前。 w3c规范中的BFC定义：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 tabl">
+<meta name="keywords" content="HTML,CSS,BFC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://diehh.github.io/MyBlogs/2015/04/21/Hello-World/index.html">
+<meta property="og:title" content="深入理解BFC和Margin Collapse">
+<meta property="og:url" content="https://diehh.github.io/MyBlogs/2015/07/08/BFC/index.html">
 <meta property="og:site_name" content="浓茶屋">
-<meta property="og:description" content="Hello World我的hexo第一天">
-<meta property="og:updated_time" content="2017-06-23T03:03:46.155Z">
+<meta property="og:description" content="什么是BFC（Block formatting contexts）首先我们来看看w3c规范对BFC的解释，其实对于这种概念的学习上，我们总是建议首先寻找官方的定义，因为原则上来说官方的才是最权威和正确的，而且还比较详细，千万不要因为看到英文就畏惧不前。 w3c规范中的BFC定义：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 tabl">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-2.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-3.jpg">
+<meta property="og:updated_time" content="2017-06-23T03:00:52.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Hello World我的hexo第一天">
+<meta name="twitter:title" content="深入理解BFC和Margin Collapse">
+<meta name="twitter:description" content="什么是BFC（Block formatting contexts）首先我们来看看w3c规范对BFC的解释，其实对于这种概念的学习上，我们总是建议首先寻找官方的定义，因为原则上来说官方的才是最权威和正确的，而且还比较详细，千万不要因为看到英文就畏惧不前。 w3c规范中的BFC定义：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 tabl">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-4.jpg">
 
 
 
@@ -131,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://diehh.github.io/MyBlogs/2015/04/21/Hello-World/"/>
+  <link rel="canonical" href="https://diehh.github.io/MyBlogs/2015/07/08/BFC/"/>
 
 
 
 
 
-  <title>Hello World | 浓茶屋</title>
+  <title>深入理解BFC和Margin Collapse | 浓茶屋</title>
   
 
 
@@ -310,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://diehh.github.io/MyBlogs/MyBlogs/2015/04/21/Hello-World/">
+    <link itemprop="mainEntityOfPage" href="https://diehh.github.io/MyBlogs/MyBlogs/2015/07/08/BFC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DieHH">
@@ -327,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">深入理解BFC和Margin Collapse</h1>
         
 
         <div class="post-meta">
@@ -339,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-21T00:00:00+08:00">
-                2015-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-08T00:00:00+08:00">
+                2015-07-08
               </time>
             
 
@@ -362,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/MyBlogs/categories/test/" itemprop="url" rel="index">
-                    <span itemprop="name">test</span>
+                  <a href="/MyBlogs/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
                   </a>
                 </span>
 
@@ -396,7 +403,69 @@
       
 
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><h4 id="我的hexo第一天"><a href="#我的hexo第一天" class="headerlink" title="我的hexo第一天"></a>我的hexo第一天</h4>
+        <h2 id="什么是BFC（Block-formatting-contexts）"><a href="#什么是BFC（Block-formatting-contexts）" class="headerlink" title="什么是BFC（Block formatting contexts）"></a>什么是BFC（Block formatting contexts）</h2><p>首先我们来看看w3c规范对BFC的解释，其实对于这种概念的学习上，我们总是建议首先寻找官方的定义，因为原则上来说官方的才是最权威和正确的，而且还比较详细，千万不要因为看到英文就畏惧不前。</p>
+<h3 id="w3c规范中的BFC定义："><a href="#w3c规范中的BFC定义：" class="headerlink" title="w3c规范中的BFC定义："></a>w3c规范中的BFC定义：</h3><p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
+<a id="more"></a>
+<p>在BFC中，盒子从顶端开始垂直地一个接一个地排列，两个盒子之间的垂直的间隙是由他们的margin 值所决定的。在一个BFC中，两个相邻的块级盒子的垂直外边距会产生折叠。</p>
+<p>在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)（对于从右到左的格式来说，则触碰到右边缘）。</p>
+<h3 id="BFC的通俗理解："><a href="#BFC的通俗理解：" class="headerlink" title="BFC的通俗理解："></a>BFC的通俗理解：</h3><p>首先BFC是一个名词，是一个独立的布局环境，我们可以理解为一个箱子（实际上是看不见摸不着的），箱子里面物品的摆放是不受外界的影响的。转换为BFC的理解则是：BFC中的元素的布局是不受外界的影响（我们往往利用这个特性来消除浮动元素对其非浮动的兄弟元素和其子元素带来的影响。）并且在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。</p>
+<h2 id="BFC的运用"><a href="#BFC的运用" class="headerlink" title="BFC的运用"></a>BFC的运用</h2><p>在w3c的规范中，除了上面的一段定义之外，BFC的相关知识点分布地比较零散，但基本集中在float、绝对定位、margin collaspe中。下面我们来看看如何应用到BFC来解决问题。</p>
+<p>在很多网站中，我们经常会看到这样的一种，左边图片+右边信息的两栏结构，下面我们来看看如何利用BFC来实现。</p>
+<p>首先我们给出这样的结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//CSS</div><div class="line">.box &#123;width:210px;border: 1px solid #000;float: left;&#125;</div><div class="line">.img &#123;width: 100px;height: 100px;background: #696;float: left;&#125;</div><div class="line">.info &#123;background: #ccc;color: #fff;&#125;</div><div class="line">//HTML</div><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;img&quot;&gt;image&lt;/div&gt;</div><div class="line">    &lt;p class=&quot;info&quot;&gt;信息信息信息信息信息信息信息信息信息信息信息信&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>一般情况下它呈现出我们所乐意看到的样子：</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-4.jpg" alt="image"></p>
+<p>但随着文字信息增多后，会变地非常的糟糕：</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-5.jpg" alt="image"></p>
+<p>很明显，这是因为info类里面的文字受到了浮动元素的影响，但这并不是我们所期望的。此时我们可以为P元素的内容建立一个BFC，让其内容消除对外界浮动元素的影响。根据上文所知，只要给info元素添加overflow:hidden;即可为其内容建立新的BFC。当然你也可以通过其他方法来建立。其效果如下：</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-6.jpg" alt="image"></p>
+<h2 id="合并外边距与BFC"><a href="#合并外边距与BFC" class="headerlink" title="合并外边距与BFC"></a>合并外边距与BFC</h2><p>在CSS当中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。</p>
+<h3 id="折叠的结果："><a href="#折叠的结果：" class="headerlink" title="折叠的结果："></a>折叠的结果：</h3><ul>
+<li>两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。</li>
+<li>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</li>
+<li>两个外边距一正一负时，折叠结果是两者的相加的和。</li>
+</ul>
+<h3 id="产生折叠的必备条件：margin必须是邻接的"><a href="#产生折叠的必备条件：margin必须是邻接的" class="headerlink" title="产生折叠的必备条件：margin必须是邻接的!"></a>产生折叠的必备条件：margin必须是邻接的!</h3><p>而根据w3c规范，两个margin是邻接的必须满足以下条件：</p>
+<ul>
+<li>必须是处于常规文档流（非float和绝对定位）的块级盒子,并且处于同一个BFC当中。</li>
+<li>没有线盒，没有空隙（clearance，下面会讲到），没有padding和border将他们分隔开</li>
+<li>都属于垂直方向上相邻的外边距，可以是下面任意一种情况</li>
+<li>元素的margin-top与其第一个常规文档流的子元素的margin-top</li>
+<li>元素的margin-bottom与其下一个常规文档流的兄弟元素的margin-top</li>
+<li>height为auto的元素的margin-bottom与其最后一个常规文档流的子元素的margin-bottom</li>
+<li>高度为0并且最小高度也为0，不包含常规文档流的子元素，并且自身没有建立新的BFC的元素的margin-top和margin-bottom</li>
+</ul>
+<h3 id="以上的条件意味着下列的规则："><a href="#以上的条件意味着下列的规则：" class="headerlink" title="以上的条件意味着下列的规则："></a>以上的条件意味着下列的规则：</h3><ul>
+<li>创建了新的BFC的元素（例如浮动元素或者’overflow’值为’visible’以外的元素）与它的子元素的外边距不会折叠</li>
+<li>浮动元素不与任何元素的外边距产生折叠（包括其父元素和子元素）</li>
+<li>绝对定位元素不与任何元素的外边距产生折叠</li>
+<li>inline-block元素不与任何元素的外边距产生折叠</li>
+<li>一个常规文档流元素的margin-bottom与它下一个常规文档流的兄弟元素的margin-top会产生折叠，除非它们之间存在间隙（clearance）。</li>
+<li>一个常规文档流元素的margin-top 与其第一个常规文档流的子元素的margin-top产生折叠，条件为父元素不包含 padding 和 border ，子元素不包含 clearance。</li>
+<li>一个 ‘height’ 为 ‘auto’ 并且 ‘min-height’ 为 ‘0’的常规文档流元素的 margin-bottom 会与其最后一个常规文档流子元素的 margin-bottom 折叠，条件为父元素不包含 padding 和 border ，子元素的 margin-bottom 不与包含 clearance 的 margin-top 折叠。</li>
+<li>一个不包含border-top、border-bottom、padding-top、padding-bottom的常规文档流元素，并且其 ‘height’ 为 0 或 ‘auto’， ‘min-height’ 为 ‘0’，其里面也不包含行盒(line box)，其自身的 margin-top 和 margin-bottom 会折叠。<br><strong>（下面我们对不产生折叠的情况逐一分析。）</strong></li>
+</ul>
+<h4 id="浮动和绝对定位不与任何元素产生-margin-折叠"><a href="#浮动和绝对定位不与任何元素产生-margin-折叠" class="headerlink" title="浮动和绝对定位不与任何元素产生 margin 折叠"></a>浮动和绝对定位不与任何元素产生 margin 折叠</h4><p><strong>原因</strong>：浮动元素和绝对定位元素不与其他盒子产生外边距折叠是因为<strong>元素会脱离当前的文档流，违反了上面所述的两个margin是邻接的条件同时，又因为浮动和绝对定位会使元素为它的内容创建新的BFC</strong>，因此该元素和子元素所处的BFC是不相同的，因此也不会产生margin的折叠。</p>
+<p><strong>DEMO</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//CSS</div><div class="line">body &#123;padding:0;margin: 0; text-align: center;&#125;</div><div class="line">.wrapper &#123;margin:30px;width: 450px;border:1px solid red;&#125;</div><div class="line">.small-box &#123;width: 50px;height: 50px;margin: 10px;background: #9cc;&#125;</div><div class="line">.middle-box &#123;width: 100px;height: 100px;margin: 20px;background: #99c;&#125;</div><div class="line">.big-box &#123;width: 120px;height: 120px;margin: 20px;background: #33e;&#125;</div><div class="line">.floatL &#123;float: left;&#125;</div><div class="line">.floatR &#123;float: right;&#125;</div><div class="line">.clear &#123;clear: both;&#125;</div><div class="line">.posA &#123;position: absolute;&#125;</div><div class="line">.overHid&#123;overflow: hidden;&#125;</div><div class="line">.red &#123;background: #f00;&#125;</div><div class="line">.green &#123;background: #0f0;&#125;</div><div class="line">.blue &#123;background: #00f;&#125;</div><div class="line">//HTML</div><div class="line">&lt;div class=&quot;wrapper overHid&quot;&gt;</div><div class="line">    &lt;div class=&quot;big-box blue&quot;&gt;non-float&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;middle-box green floatL&quot;&gt;</div><div class="line">        &lt;div class=&quot;small-box red&quot;&gt;&lt;/div&gt;</div><div class="line">        float left</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-1.jpg" alt="image"></p>
+<p>但是浮动元素脱离了当前的BFC并不影响它后面的兄弟元素，后面的兄弟元素与浮动元素前面的元素依然在同一个BFC当中，所以，它们之间的margin还是会折叠的。下面我们对上面的demo做一下修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrapper overHid&quot;&gt;</div><div class="line">    &lt;div class=&quot;big-box&quot;&gt;non-float&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;middle-box green floatL&quot;&gt;float left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;middle-box red&quot;&gt;non-clear&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-2.jpg" alt="image"></p>
+<p>从上面这个修改后的demo中可以看出，红色的块盒在没有清楚浮动的情况下，它的margin-top和蓝色块盒的margin-bottom产生了折叠，这证明了我上面的结论。</p>
+<p>下面我们来谈谈 ‘clearance’ 这个神奇的东西，当浮动元素之后的元素设置clear以闭合相关方向的浮动时，根据w3c规范规定，闭合浮动的元素会在其margin-top以上产生一定的空隙（clearance，如下图），该空隙会阻止元素margin-top的折叠，并作为间距存在于元素的margin-top的上方。关于这个间距的计算稍微有点复杂，但实际工作中你并不需要去计算它，我们先来看看例子吧：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrapper overHid&quot;&gt;</div><div class="line">    &lt;div class=&quot;big-box&quot; style=&quot;box-shadow:0 20px 0 rgba(0,0,255,0.2);&quot;&gt;non-float&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;middle-box green floatL&quot; style=&quot;opacity:0.6&quot;&gt;float left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;middle-box red clear&quot; style=&quot;margin-top:40px;box-shadow:0 -40px 0 rgba(255,0,0,0.2);&quot;&gt;clear&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/baiyaimages/margin-colla-3.jpg" alt="image"></p>
+<p>上面的图中我们可以看到，我们为红色块盒设置的40px的margin-top（这里我们通过相同高度的阴影来将其可视化）好像并没有对紫色块盒起作用，而且无论我们怎么修改这个margin-top值都不会影响红色块盒的位置，而只由绿色块盒的margin-bottom所决定。</p>
+<p>也就是说，我们只需要知道，闭合浮动的元素的border-top会紧贴着相应的浮动元素的margin-bottom。</p>
+<p>原来，通过w3c的官方规范可知，闭合浮动的块盒在margin-top上所产生的间距（clearance）的值与该块盒的margin-top之和应该足够让该块盒垂直的跨越浮动元素的margin-bottom，使闭合浮动的块盒的border-top恰好与浮动元素的块盒的margin-bottom相邻接。</p>
+<p>用上图例子中的相关值可以得出这样一个式子：r-margin-top + r-clearance = g-margin-top + g-height + g-margin-bottom</p>
+<p>PS！闭合浮动并不能使浮动元素回到原来的BFC当中！</p>
+<h4 id="分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）"><a href="#分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）" class="headerlink" title="分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）"></a>分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）</h4><p>inline-block不符合w3c规范所说元素必须是块级盒子的条件，因为规范中又说明，块级盒子的display属性必须是以下三种之一：’block’， ‘list-item’， 和 ‘table’。</p>
+<blockquote>
+<p>原文: <a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" target="_blank" rel="external">http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html</a> © w3cplus.com</p>
+</blockquote>
+
       
     </div>
 
@@ -425,7 +494,11 @@
       
         <div class="post-tags">
           
-            <a href="/MyBlogs/tags/test/" rel="tag"># test</a>
+            <a href="/MyBlogs/tags/HTML/" rel="tag"># HTML</a>
+          
+            <a href="/MyBlogs/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/MyBlogs/tags/BFC/" rel="tag"># BFC</a>
           
         </div>
       
@@ -438,14 +511,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/MyBlogs/2015/05/19/HTML5初解/" rel="next" title="HTML5 初解">
+                <i class="fa fa-chevron-left"></i> HTML5 初解
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/MyBlogs/2015/04/25/HTML初解/" rel="prev" title="HTML 初解">
-                HTML 初解 <i class="fa fa-chevron-right"></i>
+              <a href="/MyBlogs/2015/08/11/css精灵/" rel="prev" title="CSS精灵">
+                CSS精灵 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我的hexo第一天"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">我的hexo第一天</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是BFC（Block-formatting-contexts）"><span class="nav-number">1.</span> <span class="nav-text">什么是BFC（Block formatting contexts）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#w3c规范中的BFC定义："><span class="nav-number">1.1.</span> <span class="nav-text">w3c规范中的BFC定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC的通俗理解："><span class="nav-number">1.2.</span> <span class="nav-text">BFC的通俗理解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC的运用"><span class="nav-number">2.</span> <span class="nav-text">BFC的运用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并外边距与BFC"><span class="nav-number">3.</span> <span class="nav-text">合并外边距与BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠的结果："><span class="nav-number">3.1.</span> <span class="nav-text">折叠的结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生折叠的必备条件：margin必须是邻接的"><span class="nav-number">3.2.</span> <span class="nav-text">产生折叠的必备条件：margin必须是邻接的!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上的条件意味着下列的规则："><span class="nav-number">3.3.</span> <span class="nav-text">以上的条件意味着下列的规则：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮动和绝对定位不与任何元素产生-margin-折叠"><span class="nav-number">3.3.1.</span> <span class="nav-text">浮动和绝对定位不与任何元素产生 margin 折叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）"><span class="nav-number">3.3.2.</span> <span class="nav-text">分析二：inline-block元素与其兄弟元素、子元素和父元素的外边距都不会折叠（包括其父元素和子元素）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
