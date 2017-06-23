@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Webpack与Gulp]]></title>
+    <url>%2FMyBlogs%2F2016%2F02%2F14%2Fwebpack%E4%B8%8Egulp%2F</url>
+    <content type="text"><![CDATA[Webpack什么是Webpack WebPack可以看做是模块打包机 它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。 为什么要使用它 如今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的JavaScript代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法 模块化，让我们可以把复杂的程序细化为小的文件; 类似于TypeScript这种在JavaScript基础上拓展的开发语言：使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能能装换为JavaScript文件使浏览器可以识别； scss，less等CSS预处理器 优点 模块化是Webpack最大的特点 你可以将一个网页模块化的拆分 Webpack会自己将你的代码打包在部署。 Gulp什么是Gulp Gulp是一种能够优化前端的开发流程的工具 为什么要使用它 管理JavaScript和CSS的顺序问题，而构建工具可以大大减少此类问题。 性能优化文件合并 浏览器需要下载多个JS文件，而浏览器是有并发限制，也就是同时并发只能下载几个文件，假如浏览器并发数是5，你有20个JS文件，而每5个需要2S, 那么你光下载JS文件都需要8S，那么网页的性能可想而知，所以我们需要合并多个文件以减少文件的数量。 文件压缩 我们知道文件越大，下载越慢，而针对JavaScript和CSS, 里面的空格，换行这些都是为了让我们读代码时更容易阅读，但是对机器来说，这些对它没有影响，所以为了减少文件大小，一般的情况我们都会用工具去掉空格和换行，有时候我们还会用比较短的变量名(记住这个要让工具最后压缩时做，而源代码一定要保证命名可读性) 来减少文件大小。 而所有的前端构建工具都具有文件合并和压缩的功能。 效率提升Vendor前缀 在CSS3使用越来越多的时候，我们都知道一些CSS的特性，不同的浏览器CSS有不同的前缀，如果我们手工添加将会很繁琐，而如果使用构建工具，很多构建工具可以自动给我添加CSS的Vendor前缀 单元测试 JavaScript的单元测试在使用MVC或者MVVM的框架后，变得越来越容易，而单元测试是质量保证的一个很重要的手段，所以在提交之前，使用构建工具自动跑一遍我们的单元测试是非常重要的 代码分析 我们写的JavaScript很多时候会有一些潜在的bug, 比如忘了添加分号，某个变量没有等等，使用一些JavaScript的代码分析工具，可以很好的帮我们检查一些常见的问题。 HTML引用JavaScript或者CSS文件 比如我们需要使用Bower之类来引用前端JavaScript和CSS的第三方库，那么如果版本升级，添加移除等都用手工来修改HTML的话，第一比较耗时，第二比较容易疏漏，尤其是在我们需要切换Debug和production版本时将会有很多额外的工作，那么使用前端构建工具可以很好的解决这些问题。 WebPack和Grunt相比有什么特性 其实Webpack和另外两个并没有太多的可比性，Gulp是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack可以替代Gulp/Grunt类的工具。 Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务。 Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
+        <tag>JS</tag>
+        <tag>Webpack</tag>
+        <tag>Gulp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[代码压缩]]></title>
     <url>%2FMyBlogs%2F2015%2F11%2F18%2F%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9%2F</url>
     <content type="text"><![CDATA[什么是代码压缩 Web性能优化最佳实践中最重要的一条是减少HTTP请求。而减少HTTP请求的最主要的方式就是，合并并压缩JavaScript和CSS文件。 关于编写css时，我们应注意通过一些细节来控制css文件的大小，比如：全局样式、继承样式、缩写样式，空格、注释等。 同时你也可以通过在线工具对你的css文件进行压缩，来减少css文件的大小，但压缩后的css文件在可维护性、识别性方面变的特别弱。 但更复杂的情况是，如果你的页面里面引用了多个css、多个js文件时就可能处理不好。 代码压缩的几大好处： 页面加载的时候只请求程序合并压缩后的c.css文件，这就减少了http对css文件的请求次数！ 不用对a.css和b.css进行压缩，保持了a.css和b.css的易编辑性、易识别性。 压缩：删除Javascript代码中所有的注释、跳转符号、换行符号及无用的空格，从而压缩了JS文件的大小。 混淆：经过编码将变量和函数原命名改为毫无意思的命名，以防他人窥视和窃取源代码。 这样做的几大坏处： 你需要解压工具才能打开文件。 如果压缩文件有损坏的话，可能是整个文件都受影响。 压缩的时候必须要注意以下几点： 压缩前的代码格式要标准。因为去掉换行与空格时，所有语句就变成一行了，如果你的代码有瑕疵（比如某行少了个分号），那就会导致整个文件报错。当然，现在有的压缩工具已经比较智能了。 备份原文件 压缩很可能不会一次成功，一般要多试，多改 工具 webpack gulp]]></content>
@@ -8,8 +23,8 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
         <tag>JS</tag>
       </tags>
   </entry>
@@ -21,8 +36,8 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -33,9 +48,9 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
         <tag>BFC</tag>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -85,7 +100,7 @@
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2FMyBlogs%2F2015%2F04%2F21%2FHello-World%2F</url>
-    <content type="text"><![CDATA[Hello World我的hexo第一天]]></content>
+    <content type="text"><![CDATA[Hello World##我的hexo第一天]]></content>
       <categories>
         <category>test</category>
       </categories>
