@@ -307,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://diehh.github.io/MyBlogs/MyBlogs/2017/06/29/WebSocket/">
+    <link itemprop="mainEntityOfPage" href="https://diehh.github.io/MyBlogs/MyBlogs/2016/03/01/WebSocket/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DieHH">
@@ -326,7 +326,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MyBlogs/2017/06/29/WebSocket/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/MyBlogs/2016/03/01/WebSocket/" itemprop="url">WebSocket原理</a></h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T20:24:05+08:00">
-                2017-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T00:00:00+08:00">
+                2016-03-01
               </time>
             
 
@@ -348,6 +348,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/MyBlogs/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -375,7 +397,139 @@
       
         
           
-            
+            <h1 id="WebSocket是HTML5出的东西（协议）"><a href="#WebSocket是HTML5出的东西（协议）" class="headerlink" title="WebSocket是HTML5出的东西（协议）"></a>WebSocket是HTML5出的东西（协议）</h1><blockquote>
+<p>也就是说HTTP协议没有变化，或者说没关系，但HTTP是不支持持久连接的（长连接，循环连接的不算）</p>
+</blockquote>
+<p>首先HTTP有1.1和1.0之说，也就是所谓的keep-alive，把多个HTTP请求合并为一个，但是Websocket其实是一个新协议，跟HTTP协议基本没有关系，只是为了兼容现有浏览器的握手规范而已，也就是说它是HTTP协议上的一种补充可以通过这样一张图理解</p>
+<p>&lt;img src=”<a href="https://pic1.zhimg.com/6651f2f811ec133b0e6d7e6d0e194b4c_b.jpg" target="_blank" rel="external">https://pic1.zhimg.com/6651f2f811ec133b0e6d7e6d0e194b4c_b.jpg</a>“ data-rawwidth=”374” data-rawheight=”133” class=”content_image” width=”374”&gt;</p>
+<ul>
+<li><p>有交集，但是并不是全部。</p>
+</li>
+<li><p>另外Html5是指的一系列新的API，或者说新规范，新技术。Http协议本身只有1.0和1.1，而且跟Html本身没有直接关系。。</p>
+</li>
+<li><p>通俗来说，你可以用HTTP协议传输非Html数据，就是这样=。=再简单来说，层级不一样。</p>
+</li>
+</ul>
+<h1 id="Websocket是什么样的协议，具体有什么优点"><a href="#Websocket是什么样的协议，具体有什么优点" class="headerlink" title="Websocket是什么样的协议，具体有什么优点"></a>Websocket是什么样的协议，具体有什么优点</h1><blockquote>
+<p>首先，Websocket是一个<strong>持久化</strong>的协议，相对于HTTP这种非持久的协议来说。</p>
+</blockquote>
+<p>简单的举个例子吧，用目前应用比较广泛的PHP生命周期来解释。</p>
+<ul>
+<li>HTTP的生命周期通过Request来界定，也就是一个Request 一个Response，那么在HTTP1.0中，这次HTTP请求就结束了。</li>
+</ul>
+<ul>
+<li>在HTTP1.1中进行了改进，使得有一个keep-alive，也就是说，在一个HTTP连接中，可以发送多个Request，接收多个Response。但是请记住 Request = Response</li>
+</ul>
+<ul>
+<li>在HTTP中永远是这样，也就是说一个request只能有一个response。而且这个response也是<strong>被动</strong>的，不能主动发起。</li>
+</ul>
+<blockquote>
+<p>教练，你BB了这么多，跟Websocket有什么关系呢？</p>
+</blockquote>
+<p>好吧，我正准备说Websocket呢。。</p>
+<blockquote>
+<p>首先Websocket是基于HTTP协议的，或者说<strong>借用</strong>了HTTP的协议来完成一部分握手。在握手阶段是一样的</p>
+</blockquote>
+<ul>
+<li>以下涉及专业技术内容，不想看的可以跳过lol:，或者只看加黑内容——–首先我们来看个典型的Websocket握手（借用Wikipedia的。。）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /chat HTTP/1.1</div><div class="line">Host: server.example.com</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</div><div class="line">Sec-WebSocket-Protocol: chat, superchat</div><div class="line">Sec-WebSocket-Version: 13</div><div class="line">Origin: http://example.com</div></pre></td></tr></table></figure>
+<ul>
+<li>熟悉HTTP的童鞋可能发现了，这段类似HTTP协议的握手请求中，多了几个东西。我会顺便讲解下作用。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div></pre></td></tr></table></figure>
+<p>这个就是Websocket的核心了，告诉Apache、Nginx等服务器：注意啦，窝发起的是Websocket协议，快点帮我找到对应的助理处理~不是那个老土的HTTP。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</div><div class="line">Sec-WebSocket-Protocol: chat, superchat</div><div class="line">Sec-WebSocket-Version: 13</div></pre></td></tr></table></figure>
+<ul>
+<li>首先，Sec-WebSocket-Key 是一个Base64 encode的值，这个是浏览器随机生成的，告诉服务器：<strong>泥煤，不要忽悠窝，我要验证尼是不是真的是Websocket助理。</strong></li>
+</ul>
+<ul>
+<li>然后，Sec_WebSocket-Protocol 是一个用户定义的字符串，用来区分同URL下，不同的服务所需要的协议。简单理解：<strong>今晚我要服务A，别搞错啦~</strong></li>
+</ul>
+<ul>
+<li>最后，Sec-WebSocket-Version 是告诉服务器所使用的Websocket Draft（协议版本）</li>
+<li>在最初的时候，Websocket协议还在 Draft 阶段，各种奇奇怪怪的协议都有，而且还有很多期奇奇怪怪不同的东西，什么Firefox和Chrome用的不是一个版本之类的，当初Websocket协议太多可是一个大难题。。</li>
+<li>不过现在还好，已经定下来啦~大家都使用的一个东西~ 脱水：<strong>服务员，我要的是13岁的噢→_→</strong></li>
+</ul>
+<p>然后服务器会返回下列东西，表示已经接受到请求， 成功建立Websocket啦！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 101 Switching Protocols</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=</div><div class="line">Sec-WebSocket-Protocol:</div></pre></td></tr></table></figure>
+<p>这里开始就是HTTP最后负责的区域了，告诉客户，我已经成功切换协议啦~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div></pre></td></tr></table></figure>
+<p>依然是固定的，告诉客户端即将升级的是Websocket协议，而不是mozillasocket，lurnarsocket或者shitsocket。</p>
+<p>然后，Sec-WebSocket-Accept 这个则是经过服务器确认，并且加密过后的 Sec-WebSocket-Key。服务器：<strong>好啦好啦，知道啦，给你看我的ID CARD来证明行了吧。。</strong></p>
+<p>后面的，Sec-WebSocket-Protocol 则是表示最终使用的协议。</p>
+<p>至此，HTTP已经完成它所有工作了，接下来就是完全按照Websocket协议进行了。具体的协议就不在这阐述了。<br>——————技术解析部分完毕——————</p>
+<p>&lt;img src=”<a href="https://pic2.zhimg.com/afe119b52e096016139edabc2dfa9661_b.jpg" target="_blank" rel="external">https://pic2.zhimg.com/afe119b52e096016139edabc2dfa9661_b.jpg</a>“ data-rawwidth=”161” data-rawheight=”187” class=”content_image” width=”161”&gt;</p>
+<p>你TMD又BBB了这么久，那到底Websocket有什么鬼用，http long poll，或者ajax轮询不都可以实现实时信息传递么。你TMD又BBB了这么久，那到底Websocket有什么鬼用，http long poll，或者ajax轮询不都可以实现实时信息传递么。</p>
+<p>&lt;img src=”<a href="https://pic1.zhimg.com/20110e661edb1e93755a99c1d826e264_b.jpg" target="_blank" rel="external">https://pic1.zhimg.com/20110e661edb1e93755a99c1d826e264_b.jpg</a>“ data-rawwidth=”176” data-rawheight=”193” class=”content_image” width=”176”&gt;</p>
+<p>好好好，年轻人，那我们来讲一讲Websocket有什么用。来给你吃点胡（苏）萝（丹）卜（红）</p>
+<p>&lt;img src=”<a href="https://pic4.zhimg.com/31ddf0cfbeecef21568d85ca60b5f1ff_b.jpg" target="_blank" rel="external">https://pic4.zhimg.com/31ddf0cfbeecef21568d85ca60b5f1ff_b.jpg</a>“ data-rawwidth=”53” data-rawheight=”65” class=”content_image” width=”53”&gt;</p>
+<h1 id="三、Websocket的作用"><a href="#三、Websocket的作用" class="headerlink" title="三、Websocket的作用"></a>三、Websocket的作用</h1><p>在讲Websocket之前，我就顺带着讲下 long poll 和 ajax轮询 的原理。</p>
+<p>首先是 ajax轮询 ，ajax轮询 的原理非常简单，让浏览器隔个几秒就发送一次请求，询问服务器是否有新信息。</p>
+<p>场景再现：客户端：啦啦啦，有没有新信息(Request)</p>
+<p>服务端：没有（Response）</p>
+<p>客户端：啦啦啦，有没有新信息(Request)</p>
+<p>服务端：没有。。（Response）</p>
+<p>客户端：啦啦啦，有没有新信息(Request)</p>
+<p>服务端：你好烦啊，没有啊。。（Response）</p>
+<p>客户端：啦啦啦，有没有新消息（Request）</p>
+<p>服务端：好啦好啦，有啦给你。（Response）</p>
+<p>客户端：啦啦啦，有没有新消息（Request）</p>
+<p>服务端：。。。。。没。。。。没。。。没有（Response） —- loop</p>
+<p>long poll </p>
+<p>long poll 其实原理跟 ajax轮询 差不多，都是采用轮询的方式，不过采取的是阻塞模型（一直打电话，没收到就不挂电话），也就是说，客户端发起连接后，如果没消息，就一直不返回Response给客户端。直到有消息才返回，返回完之后，客户端再次建立连接，周而复始。</p>
+<p>场景再现</p>
+<p>客户端：啦啦啦，有没有新信息，没有的话就等有了才返回给我吧（Request）</p>
+<p>服务端：额。。   等待到有消息的时候。。来 给你（Response）</p>
+<p>客户端：啦啦啦，有没有新信息，没有的话就等有了才返回给我吧（Request） -loop</p>
+<p>从上面可以看出其实这两种方式，都是在不断地建立HTTP连接，然后等待服务端处理，可以体现HTTP协议的另外一个特点，<strong>被动性</strong>。</p>
+<p>何为被动性呢，其实就是，服务端不能主动联系客户端，只能有客户端发起。</p>
+<p>简单地说就是，服务器是一个很懒的冰箱（这是个梗）（不会、不能主动发起连接），但是上司有命令，如果有客户来，不管多么累都要好好接待。</p>
+<p>说完这个，我们再来说一说上面的缺陷（原谅我废话这么多吧OAQ）</p>
+<p>从上面很容易看出来，不管怎么样，上面这两种都是非常消耗资源的。</p>
+<p>ajax轮询 需要服务器有很快的处理速度和资源。（速度）</p>
+<p>long poll 需要有很高的并发，也就是说同时接待客户的能力。（场地大小）</p>
+<p>所以ajax轮询 和long poll 都有可能发生这种情况。</p>
+<p>客户端：啦啦啦啦，有新信息么？</p>
+<p>服务端：月线正忙，请稍后再试（503 Server Unavailable）</p>
+<p>客户端：。。。。好吧，啦啦啦，有新信息么？</p>
+<p>服务端：月线正忙，请稍后再试（503 Server Unavailable）</p>
+<p>客户端：</p>
+<p>&lt;img src=”<a href="https://pic1.zhimg.com/7c0cf075c7ee4cc6cf52f4572a4c1c10_b.jpg" target="_blank" rel="external">https://pic1.zhimg.com/7c0cf075c7ee4cc6cf52f4572a4c1c10_b.jpg</a>“ data-rawwidth=”143” data-rawheight=”50” class=”content_image” width=”143”&gt;</p>
+<p>然后服务端在一旁忙的要死：冰箱，我要更多的冰箱！更多。。更多。。（我错了。。这又是梗。。）</p>
+<hr>
+<h1 id="言归正传，我们来说Websocket吧"><a href="#言归正传，我们来说Websocket吧" class="headerlink" title="言归正传，我们来说Websocket吧"></a>言归正传，我们来说Websocket吧</h1><p>通过上面这个例子，我们可以看出，这两种方式都不是最好的方式，需要很多资源。</p>
+<p>一种需要更快的速度，一种需要更多的’电话’。这两种都会导致’电话’的需求越来越高。</p>
+<p>哦对了，忘记说了HTTP还是一个无状态协议，通俗的说就是，服务器因为每天要接待太多客户了，是个<strong>健忘鬼</strong>，你一挂电话，他就把你的东西全忘光了，把你的东西全丢掉了。你第二次还得再告诉服务器一遍。</p>
+<p>所以在这种情况下出现了，Websocket出现了。</p>
+<p>他解决了HTTP的这几个难题。</p>
+<p>首先，<strong>被动性</strong>，当服务器完成协议升级后（HTTP-&gt;Websocket），服务端就可以主动推送信息给客户端啦。</p>
+<p>所以上面的情景可以做如下修改。</p>
+<p>客户端：啦啦啦，我要建立Websocket协议，需要的服务：chat，Websocket协议版本：17（HTTP Request）</p>
+<p>服务端：ok，确认，已升级为Websocket协议（HTTP Protocols Switched）</p>
+<p>客户端：麻烦你有信息的时候推送给我噢。。</p>
+<p>服务端：ok，有的时候会告诉你的。</p>
+<p>服务端：balabalabalabala</p>
+<p>服务端：balabalabalabala</p>
+<p>服务端：哈哈哈哈哈啊哈哈哈哈</p>
+<p>服务端：笑死我了哈哈哈哈哈哈哈</p>
+<p>就变成了这样，只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。（在程序设计中，这种设计叫做回调，即：你有信息了再来通知我，而不是我傻乎乎的每次跑来问你）这样的协议解决了上面同步有延迟，而且还非常消耗资源的这种情况。</p>
+<p>那么为什么他会解决服务器上消耗资源的问题呢？</p>
+<p>其实我们所用的程序是要经过两层代理的，即HTTP协议在Nginx等服务器的解析下，然后再传送给相应的Handler（PHP等）来处理。</p>
+<p>简单地说，我们有一个非常快速的接线员（Nginx），他负责把问题转交给相应的客服（Handler）。</p>
+<p>本身接线员基本上速度是足够的，但是每次都卡在客服（Handler）了，老有客服处理速度太慢，导致客服不够。</p>
+<p>Websocket就解决了这样一个难题，建立后，可以直接跟接线员建立持久连接，有信息的时候客服想办法通知接线员，然后接线员在统一转交给客户。</p>
+<p>这样就可以解决客服处理速度过慢的问题了。</p>
+<p>同时，在传统的方式上，要不断的建立，关闭HTTP协议，由于HTTP是非状态性的，每次都要重新传输identity info（鉴别信息），来告诉服务端你是谁。</p>
+<p>虽然接线员很快速，但是每次都要听这么一堆，效率也会有所下降的，同时还得不断把这些信息转交给客服，不但浪费客服的处理时间，而且还会在网路传输中消耗过多的流量/时间。</p>
+<p>但是Websocket只需要一次HTTP握手，所以说整个通讯过程是建立在一次连接/状态中，也就避免了HTTP的非状态性，服务端会一直知道你的信息，直到你关闭请求，这样就解决了接线员要反复解析HTTP协议，还要查看identity info的信息。</p>
+<p>同时由客户主动询问，转换为服务器（推送）有信息的时候就发送（当然客户端还是等主动发送信息过来的。。），没有信息的时候就交给接线员（Nginx），不需要占用本身速度就慢的客服（Handler）了</p>
+<hr>
+<p>至于怎么在不支持Websocket的客户端上使用Websocket。。答案是：<strong>不能</strong></p>
+<p>但是可以通过上面说的 long poll 和 ajax 轮询来 模拟出类似的效果</p>
+<hr>
+<p>作者：Ovear<br>链接：<a href="https://www.zhihu.com/question/20215561/answer/40316953" target="_blank" rel="external">https://www.zhihu.com/question/20215561/answer/40316953</a><br>来源：知乎</p>
+
           
         
       
@@ -1747,7 +1901,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/MyBlogs/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
