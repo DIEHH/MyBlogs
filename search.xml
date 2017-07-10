@@ -109,15 +109,4 @@
         <tag>HTML</tag>
       </tags>
   </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2FMyBlogs%2F2015%2F04%2F21%2FHello-World%2F</url>
-    <content type="text"><![CDATA[Hello World##我的hexo第一天]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
 </search>
